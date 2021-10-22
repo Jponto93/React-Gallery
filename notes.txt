@@ -1,0 +1,35 @@
+[x] add a few images to public/images 
+    [x] modify server/modules/data.js to include the following for each image
+        [x] id //each id should be unique
+        [x] title
+        [x] description
+        [x] path
+
+[x] npm install nodemon --global
+[x] npm install
+
+[ ] components
+    [ ] App
+    [ ] GalleryList
+    [ ] GalleryItem
+---------------------------------------------------------------------------------------------------  
+
+[ ] wireframe 
+    [ ] pics (divs) should be same dimentions
+
+[ ] use axios to GET data from /gallery and store in App.jsx
+
+[ ] Create component GalleryItem.jsx and pass it data stored in App via props
+    [ ]iterate (loop) --> (map) the list of gallery data
+    [ ] make GalleryItems
+
+[ ] create component GalleryItem.jsx and pass it the individual gallery item via props
+    [ ] Update GalleryList to use this component to display image
+    [ ] Swap the image with the description on click. (conditional rendering)
+    [ ] Display the number of likes for each item and include a like button
+    [ ] When the like button is clicked, use Axios to update (PUT) the like count /gallery/like/:id 
+    [ ] Update the gallery each time a like button is clicked
+
+
+[ ] STRETCH GOALS TBD...
+    
