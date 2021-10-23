@@ -3,7 +3,7 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 function GalleryList ({galleryData, fetchGallery}) {
 
     return (
-        <div>
+        <div className="container">
             {galleryData.map((photo) => {
                 return (
                     <GalleryItem 
