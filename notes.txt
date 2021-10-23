@@ -11,7 +11,7 @@
 [ ] components
     [ ] App
     [ ] GalleryList
-    [ ] GalleryItem
+    [ ] GalleryItem -- started
 ---------------------------------------------------------------------------------------------------  
 
 [ ] wireframe 
