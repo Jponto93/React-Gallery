@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool.js')
-
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
 // PUT Route
@@ -47,7 +46,7 @@ router.get('/', (req, res) => {
         console.log('router.js error in GET', error);
         res.sendStatus(500);
     })
-    
+
 }); // END GET Route
 
 module.exports = router;
