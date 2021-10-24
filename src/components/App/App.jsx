@@ -9,6 +9,8 @@ import GalleryForm from '../GalleryForm/GalleryForm';
 function App() {
 
   let [galleryData, setGalleryData] = useState([]);
+  // let [isInEditMode, setIsInEditMode] = useState(false);
+  // let [galleryItemToEdit, setGalleryItemToEdit] = useState({});
   
 
 
@@ -27,6 +29,28 @@ function App() {
     })
   }; // fetchGallery
 
+
+  // const editGalleryItem = (galleryItemToEdit) => {
+  //   console.log(`about to edit something on the server with a put`);
+  //   console.log(`that object is`, galleryItemToEdit);
+  //   Axios({
+  //     method: `PUT`,
+  //     url: `/gallery/${galleryItemToEdit.id}`,
+  //     data: galleryItemToEdit
+  //   })
+  //     .then((response) => {
+  //       console.log('App PUT success');
+  //       fetchGallery();
+  //       setIsInEditMode(false);
+  //     })
+  //       .catch((error) => {
+  //         console.log('Error in App PUT', error);
+  //       })
+  // }
+
+    console.log(galleryData);
+    // console.log(`Is in edit mode:`, isInEditMode);
+
   const addToGallery = (newItem) => {
     console.log('Post start', newItem);
     Axios({
@@ -44,17 +68,27 @@ function App() {
   } // end addToGallery
 
 
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryForm addToGallery={addToGallery}/>
+        <GalleryForm 
+        addToGallery={addToGallery}
+        galleryData={galleryData}
+        fetchGallery={fetchGallery}
+        // setGalleryItemToEdit={setGalleryItemToEdit}
+        // galleryItemToEdit={galleryItemToEdit}
+        // setIsInEditMode={setIsInEditMode}
+        />
         <GalleryList 
         galleryData={galleryData}
         fetchGallery={fetchGallery}
+        // setGalleryItemToEdit={setGalleryItemToEdit}
+        // galleryItemToEdit={galleryItemToEdit}
+        // setIsInEditMode={setIsInEditMode}
         />
-        {/* <img src="images/goat_small.jpg"/> */}
       </div>
     );
 }

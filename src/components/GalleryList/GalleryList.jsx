@@ -1,6 +1,12 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList ({galleryData, fetchGallery}) {
+function GalleryList ({
+    galleryData, 
+    fetchGallery,
+    setIsInEditMode,
+    setGalleryItemToEdit,
+    galleryItemToEdit
+}) {
 
     return (
         <div className="container">
@@ -9,7 +15,10 @@ function GalleryList ({galleryData, fetchGallery}) {
                     <GalleryItem 
                     photo={photo}
                     key={photo.id}
-                    fetchGallery={fetchGallery}/>
+                    fetchGallery={fetchGallery}
+                    setIsInEditMode={setIsInEditMode}
+                    setGalleryItemToEdit={setGalleryItemToEdit}
+                    galleryItemToEdit={galleryItemToEdit}/>
                 )
             })}
         </div>

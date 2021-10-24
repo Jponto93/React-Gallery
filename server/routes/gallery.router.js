@@ -73,6 +73,28 @@ router.post('/', (req, res) => {
             console.log('Error making DB POST', error);
             res.sendStatus(500);
         })
-});
+}); // END POST
+
+// DELETE route
+router.delete('/:id', (req, res) => {
+    let idToDelete = req.params.id;
+    const sqlText = `
+    DELETE FROM "galleryItems"
+    WHERE "id" = $1;
+    `;
+
+    let values = [idToDelete];
+    pool
+        .query(sqlText, values)
+        .then((result) => {
+            res.sendStatus(204);
+        })
+        .catch((error) => {
+            console.log('Error in the delete item', error);
+            res.sendStatus(500);
+        })
+})
+
+
 
 module.exports = router;
