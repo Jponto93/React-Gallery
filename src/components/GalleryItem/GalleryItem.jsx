@@ -31,6 +31,10 @@ function GalleryItem({
         
     } // end addLike
 
+    const removeItem = () => {
+        console.log('In remove item', photo.id);
+    }
+
     const editItem = () => {
         setIsInEditMode(true);
         console.log(groceryItemToEdit);
@@ -48,6 +52,9 @@ function GalleryItem({
                 <div>
                     <button className="loveBtn" onClick={addLike}>Love it</button>
                     {photo.likes ? <p>{photo.likes} people love this!</p> : <p>No love yet!</p>}
+                </div>
+                <div>
+                    <button onClick={removeItem}>Remove</button>
                 </div>
             </div>
         </>
