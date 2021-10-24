@@ -33,11 +33,19 @@ function GalleryItem({
 
     const removeItem = () => {
         console.log('In remove item', photo.id);
+        axios
+            .delete(`/gallery/${photo.id}`)
+            .then((response) => {
+                fetchGallery();
+            })
+            .catch((err) => {
+                console.log('Error deleting in DB', err);
+            })
     }
 
     const editItem = () => {
         setIsInEditMode(true);
-        console.log(groceryItemToEdit);
+        console.log(galleryItemToEdit);
         // pass the current galleryItem as the galleryItemToEdit
         setGalleryItemToEdit({...galleryItem });
     }
