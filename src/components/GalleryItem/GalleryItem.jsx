@@ -3,7 +3,13 @@ import { useState } from "react";
 import GalleryPhoto from "../GalleryPhoto/GalleryPhoto";
 
 
-function GalleryItem({ photo, fetchGallery}) {
+function GalleryItem({ 
+    photo, 
+    fetchGallery,
+    setGalleryItemToEdit,
+    setIsInEditMode,
+    galleryItemToEdit
+}) {
     
     let [flipToggle, setFlipToggle] = useState(true);
     
@@ -24,6 +30,13 @@ function GalleryItem({ photo, fetchGallery}) {
             })
         
     } // end addLike
+
+    const editItem = () => {
+        setIsInEditMode(true);
+        console.log(groceryItemToEdit);
+        // pass the current galleryItem as the galleryItemToEdit
+        setGalleryItemToEdit({...galleryItem });
+    }
 
     return (
         
