@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
 
 function GalleryForm({
     addToGallery,
@@ -32,26 +34,25 @@ function GalleryForm({
     return (
         <>
             <div className="inputContainer">
-
-                <form onSubmit={handleSubmit}>
+                <form>
                     <div className="urlDiv">
-                        <label htmlFor="url">Add URL</label>
-                        <input
+                        <TextField
+                            label="URL"
+                            variant="outlined"
                             className="urlIn"
                             onChange={(event) => setGalleryItemPath(event.target.value)}
                             value={galleryItemPath}
                         />
                     </div>
-
                     <div className="descriptionDiv">
-                        <label htmlFor="description">Add Description</label>
-                        <input
+                        <TextField
+                            label="Description"
                             className="descriptionIn"
                             onChange={(event) => setGalleryItemDescription(event.target.value)}
-                            value={galleryItemDescription} />
+                            value={galleryItemDescription}
+                        />
                     </div>
-
-                    <button>Add image</button>
+                    <button onSubmit={handleSubmit}>Add pic</button>
                 </form>
             </div>
         </>

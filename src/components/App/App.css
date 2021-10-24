@@ -16,6 +16,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   
 }
 
@@ -27,7 +28,22 @@
 }
 
 .tile {
-  border: 5px solid blueviolet;
+  border: 5px solid #FF686B;
   margin: 5px;
   border-radius: 15px;
+  background-color: #97EFE9;
+
 };
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
