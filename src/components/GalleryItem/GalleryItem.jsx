@@ -6,9 +6,9 @@ import GalleryPhoto from "../GalleryPhoto/GalleryPhoto";
 function GalleryItem({ 
     photo, 
     fetchGallery,
-    setGalleryItemToEdit,
-    setIsInEditMode,
-    galleryItemToEdit
+    // setGalleryItemToEdit,
+    // setIsInEditMode,
+    // galleryItemToEdit
 }) {
     
     let [flipToggle, setFlipToggle] = useState(true);
@@ -43,19 +43,26 @@ function GalleryItem({
             })
     }
 
-    const editItem = () => {
-        setIsInEditMode(true);
-        console.log(galleryItemToEdit);
-        // pass the current galleryItem as the galleryItemToEdit
-        setGalleryItemToEdit({...galleryItem });
-    }
+    // const editItem = () => {
+    //     setIsInEditMode(true);
+    //     console.log(galleryItemToEdit);
+    //     // pass the current galleryItem as the galleryItemToEdit
+    //     setGalleryItemToEdit({...galleryItem });
+    // }
 
     return (
         
         <>
             <div className="tile">
                 <div onClick={changeDisplay}>
-                    {flipToggle ? (<img className="imgToggle" src={photo.path} alt={photo.description}/> )  : ( <p className="imgToggle">{photo.description}</p> )}
+                    {flipToggle ? (<img className="imgToggle" src={photo.path} alt={photo.description}/> )  : 
+                    ( 
+                    <>
+                        {/* <button onClick={editItem}>Edit Description</button> */}
+                        <p className="imgToggle">
+                            {photo.description}
+                        </p> 
+                    </>)}
                 </div>
                 <div>
                     <button className="loveBtn" onClick={addLike}>Love it</button>
